@@ -1,0 +1,4 @@
+.vscode
+.next
+dist
+node_modules

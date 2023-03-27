@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "date-fns": "^2.29.3",
+    "serve": "^14.2.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1"
+  },
+  "scripts": {
+    "react": "vite --strictPort --port 8080 ./react",
+    "serve": "serve -l 8000 serve",
+    "vue": "vite --strictPort --port 8080 -c ./vue/vite.config.js ./vue",
+    "express:build": "cd express && tsc --watch",
+    "express:run": "nodemon express/dist/server.js",
+    "express": "concurrently \"npm:express:build\" \"npm:express:run\"",
+    "next": "cd next && npm run dev"
+  }
+}

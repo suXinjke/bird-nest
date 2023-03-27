@@ -1,0 +1,76 @@
+:root {
+  --color-primary: #ff8f02;
+  --color-secondary: #816949;
+  --color-light: #f3f3f3;
+  --color-gray: #e0e0e0;
+  --color-dark: #333333;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--color-light);
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+}
+
+body {
+  background-image: url('/duck.png');
+  background-repeat: no-repeat;
+  background-position: bottom 1rem right 1rem;
+  background-attachment: fixed;
+  background-size: 200px;
+}
+
+#root,
+#__next {
+  display: flex;
+}
+
+nav {
+  overflow: auto;
+  min-width: 12rem;
+  height: 100vh;
+}
+
+nav a {
+  display: block;
+  line-height: 1.25rem;
+  text-decoration: none;
+}
+
+nav a:visited {
+  color: inherit;
+}
+
+nav a,
+nav .subHeader {
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+}
+
+nav a.active {
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+}
+
+nav .subHeader {
+  display: block;
+  margin-top: 1rem;
+}
+
+#content {
+  flex: 1;
+  padding: 1rem;
+  height: 100vh;
+  overflow: auto;
+}
