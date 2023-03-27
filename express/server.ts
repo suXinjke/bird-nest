@@ -1,4 +1,5 @@
 import express from 'express'
+import { createCanvas, loadImage } from 'canvas'
 import cors from 'cors'
 
 import objectionRoutes from './objection/routes.js'
@@ -40,6 +41,22 @@ app.get(
   (req, res) => {
     res.download('./serve/duck.png', 'special_duck.png')
   },
+)
+
+app.get(
+  '/ducksu-canvas',
+  asyncHandler(async (req, res) => {
+    const duck = await loadImage('./serve/duck.png')
+
+    const canvas = createCanvas(duck.width, duck.height)
+    const ctx = canvas.getContext('2d')
+
+    ctx.fillStyle = 'red'
+    ctx.fillRect(0, 0, duck.width, duck.height)
+
+    ctx.drawImage(duck, 0, 0, duck.width, duck.height)
+    res.contentType('png').send(canvas.toBuffer())
+  }),
 )
 
 app.use((err, req, res, next) => {
