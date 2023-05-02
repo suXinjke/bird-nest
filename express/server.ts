@@ -4,6 +4,7 @@ import cors from 'cors'
 
 import objectionRoutes from './objection/routes.js'
 import otpRoutes from './otp/routes.js'
+import fileRoutes from './file/routes.js'
 import { asyncHandler, sleep } from './util.js'
 
 const app = express()
@@ -11,6 +12,7 @@ const port = 3000
 
 app.use('/objection', objectionRoutes)
 app.use('/otp', otpRoutes)
+app.use('/file', fileRoutes)
 
 app.get('/ping', (req, res) => {
   const desiredStatus = parseInt(req.query.status as string) || 200

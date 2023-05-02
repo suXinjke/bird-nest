@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>multipart/form-data</title>
+
+  <link href="/style.css" rel="stylesheet">
+  <script src="/multipart/main.js"></script>
+</head>
+
+<body>
+  <div id="content">
+    <h1>multipart/form-data</h1>
+
+    <form method="POST" action="http://localhost:3000/file" enctype="multipart/form-data">
+      <h2>Default browser behavior</h2>
+      <input type="file" name="pic" />
+      <button>Send</button>
+    </form>
+
+    <form id="jsForm">
+      <h2>JS submit event</h2>
+      <input type="file" name="pic" />
+      <button>Send</button>
+    </form>
+  </div>
+</body>
+
+</html>
