@@ -63,6 +63,25 @@ app.get(
   }),
 )
 
+app.get(
+  '/terminal-stream',
+  asyncHandler(async (req, res) => {
+    let i = 0
+    let alive = true
+
+    req.on('close', () => {
+      alive = false
+    })
+
+    while (alive) {
+      res.write('\u001b[2J\u001b[0;0H')
+      res.write(`Hello World! ${i}`)
+      await sleep()
+      i++
+    }
+  }),
+)
+
 app.use((err, req, res, next) => {
   console.log(err)
   res.status(500).json({
