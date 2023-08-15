@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "lib": ["DOM", "ES2020"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
+}

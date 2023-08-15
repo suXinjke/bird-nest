@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@preact/signals": "^1.2.1",
+    "mobx-react-lite": "^4.0.3",
+    "preact": "^10.17.0",
+    "react-router-dom": "^6.15.0"
+  }
+}

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "react": "vite --strictPort --port 8080 ./react",
+    "preact": "vite --strictPort --port 8080 ./preact",
     "serve": "serve -l 8000 serve",
     "svelte": "vite --strictPort --port 8080 -c ./svelte/vite.config.js ./svelte",
     "vue": "vite --strictPort --port 8080 -c ./vue/vite.config.js ./vue",
